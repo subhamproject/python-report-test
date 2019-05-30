@@ -10,5 +10,5 @@ sleep 3
 coverage=$(find . -name index.html)
 if [ -n "$coverage" ]
 then
-    cp -pr $coverage jenkins-test-results/
+    cp -p $coverage jenkins-test-results/
 fi
