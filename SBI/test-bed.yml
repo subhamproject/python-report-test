@@ -15,7 +15,7 @@ services:
   testpy:
      user: "${USERID}:${GROUPID}"
      #image: qnib/pytest
-     image: python
+     image: pytest
      volumes:
       - /etc/passwd:/etc/passwd:ro
       - /etc/group:/etc/group:ro
