@@ -9,7 +9,7 @@ pwd
 # lets consolidate the various test results to a single dir
 [ ! -d jenkins-test-results ] && mkdir jenkins-test-results
 
-coverage=$(find . -name index.html)
+coverage=$(find ./coverage -name index.html)
 if [ -n "$coverage" ]
 then
     cp -p $coverage jenkins-test-results/
