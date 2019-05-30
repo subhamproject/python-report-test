@@ -28,14 +28,14 @@ pipeline {
     stage('Clover') {
       when {
         expression {
-          fileExists("jenkins-test-results/clover.xml")
+          fileExists("jenkins-test-results/index.html")
         }
       }
       steps {
         step([
           $class: 'CloverPublisher',
           cloverReportDir: 'jenkins-test-results',
-          cloverReportFileName: 'clover.xml',
+          cloverReportFileName: 'index.html',
           healthyTarget: [methodCoverage: 70, conditionalCoverage: 80, statementCoverage: 80], // optional, default is: method=70, conditional=80, statement=80
         ])
       }
