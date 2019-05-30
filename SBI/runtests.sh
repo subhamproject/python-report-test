@@ -4,6 +4,8 @@ pytest --cov=. --cov-report html:coverage
 
 sleep 3
 
+pwd
+
 # lets consolidate the various test results to a single dir
 [ ! -d jenkins-test-results ] && mkdir jenkins-test-results
 
