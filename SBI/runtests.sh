@@ -1,5 +1,5 @@
 #!/bin/bash
-set +x
+set -x
 pytest --cov=. --cov-report html:coverage
 
 sleep 3
