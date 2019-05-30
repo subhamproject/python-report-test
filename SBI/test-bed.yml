@@ -10,8 +10,8 @@ services:
       - "${JENKINS_HOME}:${JENKINS_HOME}:rw"
       - "${WORKSPACE}:${WORKSPACE}:rw"
      environment:
-      NEXUS_USERNAME: $NEXUS_USERNAME
-      NEXUS_PASSWORD: $NEXUS_PASSWORD
+      NEXUS_USERNAME: NEXUS_USERNAME
+      NEXUS_PASSWORD: NEXUS_PASSWORD
   testpy:
      user: "${USERID}:${GROUPID}"
      build: docker/pytest
@@ -22,6 +22,6 @@ services:
       - "${JENKINS_HOME}:${JENKINS_HOME}:rw"
       - "${WORKSPACE}:${WORKSPACE}:rw"
      environment:
-      NEXUS_USERNAME: $NEXUS_USERNAME
-      NEXUS_PASSWORD: $NEXUS_PASSWORD
+      NEXUS_USERNAME: NEXUS_USERNAME
+      NEXUS_PASSWORD: NEXUS_PASSWORD
 
