@@ -40,6 +40,18 @@ pipeline {
         ])
       }
     }
+    stage('publishHTML') {
+      steps {
+      publishHTML (target: [
+       allowMissing: false,
+       alwaysLinkToLastBuild: false,
+       keepAll: true,
+       reportDir: 'jenkins-test-results',
+       reportFiles: 'index.html',
+       reportName: "coverage report"
+     ])
+      }
+    }
     stage('TAP') {
       steps {
         step([$class: "TapPublisher", testResults: "jenkins-test-results/*.tap"])
