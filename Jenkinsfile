@@ -44,7 +44,7 @@ pipeline {
       steps {
       publishHTML (target: [
        allowMissing: false,
-       alwaysLinkToLastBuild: false,
+       alwaysLinkToLastBuild: true,
        keepAll: true,
        reportDir: 'jenkins-test-results',
        reportFiles: 'index.html',
