@@ -40,16 +40,17 @@ pipeline {
         ])
       }
     }
-    stage('publishHTML') {
+    stage('Cobertura Report') {
       steps {
-      publishHTML (target: [
-       allowMissing: false,
-       alwaysLinkToLastBuild: true,
-       keepAll: true,
-       reportDir: 'jenkins-test-results',
-       reportFiles: 'index.html',
-       reportName: "coverage report"
-     ])
+        step([$class: 'CoberturaPublisher', 
+                autoUpdateHealth: false, 
+                autoUpdateStability: false, 
+                coberturaReportFile: '**/coverage.xml', 
+                failUnhealthy: false, 
+                failUnstable: false, 
+                maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', 
+                zoomCoverageChart: false
+               ])
       }
     }
     stage('TAP') {
