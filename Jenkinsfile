@@ -42,7 +42,7 @@ pipeline {
     }
     stage('Cobertura Report') {
       steps {
-        junit '**/junit.xml'
+       // junit '**/junit.xml'
         step([$class: 'CoberturaPublisher', 
                 autoUpdateHealth: false, 
                 autoUpdateStability: false, 
